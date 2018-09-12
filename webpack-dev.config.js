@@ -6,7 +6,8 @@ module.exports = {
 	mode: "development",
 	devtool: 'source-map',
 	module: {
-		rules: [{
+		rules: [
+			{
 				test: /\.(js|jsx)$/,
 				exclude: /(node_modules|bower_components)/,
 				loader: 'babel-loader',
@@ -17,6 +18,10 @@ module.exports = {
 			{
 				test: /\.css$/,
 				use: ['style-loader', 'css-loader']
+			},
+			{
+				test: /\.scss$/,
+				use: ['style-loader', 'css-loader', 'sass-loader']
 			}
 		]
 	},
