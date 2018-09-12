@@ -7,11 +7,18 @@
   </head>
   <body>
     <div id="root"></div>
-    
+
     <noscript>
       You need to enable JavaScript to run this app.
     </noscript>
-
-    <script src="../dist/bundle.js"></script>
+     <!-- The following snippet can be used in production settings to target the bundle -->
+    <script>
+        const baseURL = window.location.host.includes("localhost")
+        ? "http://localhost:3000/"
+        : "URL_TO_DEPLOYED_APP";
+        const bundleScript = document.createElement('script');
+        bundleScript.src = baseURL + "dist/bundle.js";
+        document.getElementsByTagName('script')[0].parentNode.appendChild(bundleScript);
+    </script>
   </body>
 </html>

@@ -8,7 +8,6 @@ class App extends Component {
             <div className='App'>
                 <h1>Welcome to Todo List</h1>
                 <p>This is the beginning</p>
-                <p>Another change has been made</p>
             </div>
         );
     }
