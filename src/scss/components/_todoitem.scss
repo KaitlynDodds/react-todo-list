@@ -34,6 +34,10 @@
         @extend %check-incomplete;
         display: block;
         margin: 0 auto;
+        transition: 1s;
+    }
+    button:hover {
+        @extend %check-complete;
     }
 }
 
