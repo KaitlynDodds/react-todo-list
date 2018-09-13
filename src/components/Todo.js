@@ -34,14 +34,16 @@ class Todo extends React.Component {
                 },
             ],
             working_item: {
-                item_topic: "",
-                item_cat: "",
-                item_date: ""
+                topic: "",
+                category: "",
+                date: ""
             }
         };
 
         this.handleCompleteItem = this.handleCompleteItem.bind(this);
         this.handleUndoCompleteItem = this.handleUndoCompleteItem.bind(this);
+        this.handleAddNewTodo = this.handleAddNewTodo.bind(this);
+        this.handleWorkingTodoChange = this.handleWorkingTodoChange.bind(this);
     }
 
     handleCompleteItem(item) {
@@ -86,11 +88,40 @@ class Todo extends React.Component {
         }
     }
 
+    handleAddNewTodo() {
+        // get working item
+        const working_item = this.state.working_item;
+
+        // cp state todo list
+        const todo_list = this.state.todo_items.slice();
+
+        // add new todo to todo list cp
+        todo_list.unshift(working_item);
+
+        // reset state 
+        this.setState({
+            todo_items: todo_list,
+            working_item: {
+                topic: "",
+                category: "",
+                date: ""
+            }
+        });
+    }
+
+    handleWorkingTodoChange(working_item) {
+        this.setState({
+            working_item: working_item
+        });
+    }
+
     render() {
         return (
             <div className='Todo'>
                 <TodoEntry 
                     working_item = { this.state.working_item } 
+                    onClick = { this.handleAddNewTodo }
+                    onChange = { this.handleWorkingTodoChange }
                 />
                 <TodoList 
                     todo_list = { this.state.todo_items } 
