@@ -4,17 +4,27 @@ import '../scss/application.scss';
 class TodoItem extends React.Component {
     render() {
         return (
-            <div className='TodoItem'>
-                <span className='accent'>Shopping</span>
+            <div className={`TodoItem ${ this.props.styleName }`}>
+
+                <span className={`accent ${this.props.item.category}`}>
+                    { this.props.item.category }
+                </span>
+
                 <div className='info'>
-                    <p>Project Styles</p>
-                    <span>OCT 18</span>
+                    <p>
+                        { this.props.item.topic }
+                    </p>
+                    <span>
+                        { this.props.item.date }
+                    </span>
                 </div>
+
                 <div className='btn'>
                     <button>
                         <i className="fas  fa-check"></i>
                     </button>
                 </div>
+                
             </div>
         );
     }

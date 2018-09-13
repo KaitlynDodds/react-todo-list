@@ -1,13 +1,22 @@
 import React from 'react';
-import CompleteTodoItem from './CompleteTodoItem';
+import TodoItem from './TodoItem';
 import '../scss/application.scss';
 
 class CompleteTodoList extends React.Component {
     render() {
+        const complete_todos = this.props.complete_list.map((item) => { 
+            return (
+                <TodoItem 
+                    key={item.topic} 
+                    item = { item } 
+                    styleName = {'CompleteTodoItem'} 
+                />
+            );
+        });
+
         return (
             <div className='CompleteTodoList'>
-                <CompleteTodoItem />
-                <CompleteTodoItem />
+                { complete_todos }
             </div>
         );
     }

@@ -12,3 +12,8 @@
 	background: -webkit-linear-gradient(legacy-direction($direction), $color-stops);
 	background: linear-gradient($direction, $color-stops);
 }
+
+@mixin accent($color) {
+	color: $color;
+	border-left: solid 3px $color;
+}

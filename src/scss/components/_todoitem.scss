@@ -10,8 +10,6 @@
     letter-spacing: .2em;
     .accent {
         width: 30%;
-        border-left: solid 4px tomato; 
-        color: tomato;
         font-size: .8em;
         padding: 10px 0 10px 10px;
     }
@@ -43,9 +41,6 @@
 
 .CompleteTodoItem {
     color: lighten($text-color-dark, 20%);
-    .accent {
-        color: lighten(tomato, 20%);
-    }
 }
 
 .CompleteTodoItem .info {
@@ -60,5 +55,20 @@
 .CompleteTodoItem .btn {
     button {
         @extend %check-complete;
+    }
+}
+
+
+.accent {
+    &.general {
+        @include accent($tag-general);
+    }
+
+    &.shopping {
+        @include accent($tag-shopping);
+    }
+
+    &.workout {
+        @include accent($tag-workout);
     }
 }
