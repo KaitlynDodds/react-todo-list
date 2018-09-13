@@ -1,0 +1,60 @@
+%flex {
+    display: flex;
+    flex-direction: row;
+}
+
+%shadow-dark {
+    @include box-shadow($blur: 15px, $spread: 3px, $color: darken($pale-sky, 20%), $opacity: .5);
+}
+
+%shadow-light {
+    @include box-shadow($blur: 4px, $spread: 1px, $color: darken($pale-sky, 10%), $opacity: .5);
+}
+
+%primary-gradient {
+    @include linear-gradient(90deg, darken($primary-color, 5%) 0%, $primary-color 70%, lighten($primary-color, 5%) 100%);
+}
+
+%secondary-gradient {
+    @include linear-gradient(90deg, darken($secondary-color, 5%) 0%, $secondary-color 70%, lighten($secondary-color, 5%) 100%);
+}
+
+%background-gradient {
+    @include linear-gradient(90deg, darken($site-background, 10%) 0%, $site-background 70%, lighten($site-background, 5%) 100%);
+}
+
+%item {
+    height: 90px;
+    background-color: $secondary-color;
+    text-transform: uppercase;
+}
+
+%btn {
+    color: white;
+    text-align: center;
+    border: none;
+    &:focus {
+        outline: none;
+    }
+}
+
+%check-complete {
+    @extend %btn;
+    @extend %primary-gradient;
+    @extend %shadow-light;
+    height: 30px;
+    width: 30px;
+    border-radius: 100%;
+    padding-top: 5px;
+}
+
+%check-incomplete {
+    @extend %btn;
+    @extend %shadow-light;
+    @extend %secondary-gradient;
+    color: $primary-color;
+    height: 30px;
+    width: 30px;
+    border-radius: 100%;
+    padding-top: 5px;
+}

@@ -1,0 +1,38 @@
+// ==================================================
+// BASIC STYLES
+// ==================================================
+
+.TodoItem {
+    @extend %flex;
+    align-items: center;
+    @extend %item;
+    color: $text-color-dark;
+    letter-spacing: .2em;
+    .accent {
+        width: 30%;
+        border-left: solid 4px tomato; 
+        color: tomato;
+        font-size: .8em;
+        padding: 10px 0 10px 10px;
+    }
+}
+
+.info {
+    width: 100%;
+    p {
+        font-size: 1.2em;
+        margin: 0 0 5px;
+    }
+    span {
+        color: lighten($text-color-dark, 40%);
+    }
+}
+
+.btn {
+    width: 18%;
+    button {
+        @extend %check-incomplete;
+        display: block;
+        margin: 0 auto;
+    }
+}

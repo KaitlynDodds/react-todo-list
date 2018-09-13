@@ -1,0 +1,30 @@
+// ==================================================
+// VARIABLES
+// ==================================================
+
+// BASE COLORS
+
+$white:             #fff;
+$black:             #000;
+$westar:            #E5E3DB;
+$cararra:           #F2F2EE;
+$pale-sky:          #657186;
+$kashmir-blue:      #496F9A;
+$cold-turkey:       #CBB3AD;
+
+// THEME COLORS
+
+$primary-color:     $kashmir-blue;
+$secondary-color:   $cararra;
+
+$text-color-dark:   darken($pale-sky, 15%);
+$text-color-light:  $cararra;
+
+$site-background:   darken($westar, 10%);
+
+// Dimensions
+
+$width-max:         100vh;
+
+$gutter-top:        20px;
+$gutter-side:       120px;

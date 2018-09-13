@@ -1,0 +1,32 @@
+// ==================================================
+// BASIC STYLES
+// ==================================================
+
+.TodoEntry {
+    @extend %flex;
+    @extend %shadow-dark;
+    height: 80px;
+    input {
+        @extend %primary-gradient;
+        padding-left: 20px;
+        width: 100%;
+        color: $text-color-light;
+        font-size: 1.3em;
+        letter-spacing: .6em;
+        text-transform: uppercase;
+        border: none;
+        margin: 0;
+    }
+    input:focus {
+        outline: none;
+    }
+    input::placeholder {
+        color: $text-color-light;
+    }
+    button {
+        @extend %btn;
+        @extend %primary-gradient;
+        width: 15%;
+        background-color: darken($primary-color, 10%);
+    }
+}
