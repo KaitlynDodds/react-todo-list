@@ -1,6 +1,7 @@
 import React from 'react';
 import TodoEntry from './TodoEntry';
 import TodoList from './TodoList';
+import CompleteTodoList from './CompleteTodoList';
 import '../scss/application.scss';
 
 class Todo extends React.Component {
@@ -9,6 +10,7 @@ class Todo extends React.Component {
             <div className='Todo'>
                 <TodoEntry />
                 {<TodoList />}
+                {<CompleteTodoList />}
             </div>
         );
     }

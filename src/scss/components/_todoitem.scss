@@ -36,3 +36,25 @@
         margin: 0 auto;
     }
 }
+
+.CompleteTodoItem {
+    color: lighten($text-color-dark, 20%);
+    .accent {
+        color: lighten(tomato, 20%);
+    }
+}
+
+.CompleteTodoItem .info {
+    p {
+       text-decoration: line-through; 
+    }
+    span {
+        color: lighten($text-color-dark, 50%);
+    }
+}
+
+.CompleteTodoItem .btn {
+    button {
+        @extend %check-complete;
+    }
+}

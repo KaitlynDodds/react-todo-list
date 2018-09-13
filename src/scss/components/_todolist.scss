@@ -6,3 +6,9 @@
     @extend %shadow-dark;
     margin-top: 40px;
 }
+
+.CompleteTodoList {
+    @extend %shadow-dark;
+    margin-top: 40px;
+    opacity: .6;
+}

@@ -9,6 +9,7 @@ class TodoList extends React.Component {
                 <TodoItem />
                 <TodoItem />
                 <TodoItem />
+                <TodoItem />
             </div>
         );
     }
