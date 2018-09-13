@@ -11,6 +11,7 @@ class TodoList extends React.Component {
                     key={item.topic} 
                     item = { item } 
                     styleName = {''} 
+                    onClick = { this.props.handleCompleteItem }
                 />
             );
         });

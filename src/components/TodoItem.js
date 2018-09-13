@@ -2,6 +2,22 @@ import React from 'react';
 import '../scss/application.scss';
 
 class TodoItem extends React.Component {
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            item: this.props.item
+        };
+
+        this.passItemUp = this.passItemUp.bind(this);
+    }
+
+    passItemUp() {
+        // passes item data up to parent callback 
+        this.props.onClick(this.state.item);
+    }
+
     render() {
         return (
             <div className={`TodoItem ${ this.props.styleName }`}>
@@ -20,8 +36,9 @@ class TodoItem extends React.Component {
                 </div>
 
                 <div className='btn'>
-                    <button>
-                        <i className="fas  fa-check"></i>
+                    <button 
+                        onClick={this.passItemUp}>
+                        <i className="fas fa-check"></i>
                     </button>
                 </div>
                 

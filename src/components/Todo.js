@@ -39,6 +39,51 @@ class Todo extends React.Component {
                 item_date: ""
             }
         };
+
+        this.handleCompleteItem = this.handleCompleteItem.bind(this);
+        this.handleUndoCompleteItem = this.handleUndoCompleteItem.bind(this);
+    }
+
+    handleCompleteItem(item) {
+        // Copy state lists
+        const completeItems = this.state.complete_items.slice();
+        const todoItems = this.state.todo_items.slice();
+
+        // remove item from todo list cp
+        const i = todoItems.indexOf(item);
+        if (i > -1) {
+            todoItems.splice(i, 1);
+
+            // add item to complete list cp
+            completeItems.unshift(item);
+        
+            // reset state 
+            this.setState({
+                complete_items: completeItems,
+                todo_items: todoItems
+            });
+        }
+    }
+
+    handleUndoCompleteItem(item) {
+        // Copy state lists
+        const completeItems = this.state.complete_items.slice();
+        const todoItems = this.state.todo_items.slice();
+
+        // remove item from complete list cp 
+        const i = completeItems.indexOf(item);
+        if (i > -1) {
+            completeItems.splice(i, 1);
+
+            // add item to todo list cp
+            todoItems.unshift(item);
+
+            // reset state 
+            this.setState({
+                complete_items: completeItems,
+                todo_items: todoItems
+            });
+        }
     }
 
     render() {
@@ -49,9 +94,11 @@ class Todo extends React.Component {
                 />
                 <TodoList 
                     todo_list = { this.state.todo_items } 
+                    handleCompleteItem = { this.handleCompleteItem }
                 />
                 <CompleteTodoList 
                     complete_list = { this.state.complete_items } 
+                    handleUndoCompleteItem = { this.handleUndoCompleteItem }
                 />
             </div>
         );

@@ -10,6 +10,7 @@ class CompleteTodoList extends React.Component {
                     key={item.topic} 
                     item = { item } 
                     styleName = {'CompleteTodoItem'} 
+                    onClick = { this.props.handleUndoCompleteItem }
                 />
             );
         });
