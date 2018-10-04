@@ -3,8 +3,12 @@
 // ==================================================
 
 .TodoEntry {
-    @extend %flex;
     @extend %shadow-dark;
+    @extend %primary-gradient;
+}
+
+.TodoEntry > div:first-of-type {
+    @extend %flex;
     height: 80px;
     input {
         @extend %primary-gradient;
@@ -23,10 +27,25 @@
     input::placeholder {
         color: $text-color-light;
     }
-    button {
+    & > button {
         @extend %btn;
         @extend %primary-gradient;
         width: 15%;
         background-color: darken($primary-color, 10%);
+    }
+}
+
+.TodoEntry div:nth-child(2) {
+    padding: 10px 0 10px 30px;
+    border-top: solid 1px darken($primary-color, 10%);
+    a {
+        font-size: 1.2em;
+        display: none;
+        color: $text-color-light;
+        text-decoration: none;
+        letter-spacing: .3em;
+    }
+    a:first-of-type {
+        display: block;
     }
 }

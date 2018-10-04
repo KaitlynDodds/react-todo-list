@@ -28,14 +28,22 @@ class TodoEntry extends React.Component {
         return (
             <div className='TodoEntry'>
 
-                <input type='text' 
-                    value = { this.props.working_item.topic } 
-                    onChange = {(e) => this.passItemUpOnChange(e)} placeholder='Things to do' 
-                />
+                <div>
+                    <input type='text' 
+                        value = { this.props.working_item.topic } 
+                        onChange = {(e) => this.passItemUpOnChange(e)} placeholder='Things to do' 
+                    />
 
-                <button onClick = {this.props.onClick}>
-                    <i className="fas fa-2x fa-plus"></i>
-                </button>
+                    <button onClick = {this.props.onClick}>
+                        <i className="fas fa-2x fa-plus"></i>
+                    </button>
+                </div>
+
+                <div>
+                    <a className="type" href="#">General</a>
+                    <a className="type" href="#">Workout</a>
+                    <a className="type" href="#">Shopping</a>
+                </div>
 
             </div>
         );
